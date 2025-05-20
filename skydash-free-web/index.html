@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>Skydash Admin</title>
+    <link rel="stylesheet" href="assets/vendors/feather/feather.css" />
+    <link rel="stylesheet" href="assets/vendors/ti-icons/css/themify-icons.css" />
+    <link rel="stylesheet" href="assets/vendors/css/vendor.bundle.base.css" />
+    <link rel="stylesheet" href="assets/vendors/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="assets/vendors/mdi/css/materialdesignicons.min.css" />
+    <link rel="stylesheet" href="assets/vendors/ti-icons/css/themify-icons.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/css/my_style.css" />
+    <link rel="shortcut icon" href="assets/images/favicon.png" />
+  </head>
+  <body>
+    <div class="container-scroller">
+      <div id="loader" style="display: none">
+        <div>Синхронизация таблиц...</div>
+      </div>
+
+      <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+        <div
+          class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-start"
+        >
+          <a class="navbar-brand brand-logo me-5" href="index.html"
+            ><img src="./assets/img/Nav Brand.png" class="me-2" alt="logo"
+          /></a>
+          <a class="navbar-brand brand-logo-mini" href="index.html"
+            ><img src="./assets/img/Logo.png" alt="logo"
+          /></a>
+        </div>
+        <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
+          <button
+            class="navbar-toggler navbar-toggler align-self-center hamburger"
+            type="button"
+            data-toggle="minimize"
+          >
+            <span class="icon-menu"></span>
+          </button>
+
+          <ul class="navbar-nav navbar-nav-right">
+            <li class="nav-item nav-profile dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                data-bs-toggle="dropdown"
+                id="profileDropdown"
+              >
+                <img src="assets/img/face28.jpg" alt="profile" />
+              </a>
+              <div
+                class="dropdown-menu dropdown-menu-right navbar-dropdown"
+                aria-labelledby="profileDropdown"
+              >
+                <a class="dropdown-item"> <i class="ti-settings text-primary"></i> Settings </a>
+                <a class="dropdown-item"> <i class="ti-power-off text-primary"></i> Logout </a>
+              </div>
+            </li>
+          </ul>
+          <button
+            class="navbar-toggler navbar-toggler-right d-lg-none align-self-center"
+            type="button"
+            data-toggle="offcanvas"
+          >
+            <span class="icon-menu"></span>
+          </button>
+        </div>
+      </nav>
+
+      <div class="container-fluid page-body-wrapper">
+        <div class="sidebar">
+          <ul class="menus_list">
+            <li class="menu-item toggle-btn">
+              <img src="./assets/img/Home.svg" alt="" />
+              <span>Курсы</span>
+              <div class="open_arrow">
+                <img src="./assets/img/Plugin/Group 1.svg" alt="" />
+              </div>
+            </li>
+            <ul class="submenu">
+              <li class="menu-item toggle-btn">
+                <span>1 курс</span>
+                <div class="open_arrow">
+                  <img src="./assets/img/Plugin/Group 1.svg" alt="" />
+                </div>
+              </li>
+              <ul class="submenu_child" id="courses"></ul>
+              <li class="menu-item">
+                <span>2 курс</span>
+                <div class="open_arrow">
+                  <img src="./assets/img/Plugin/Group 1.svg" alt="" />
+                </div>
+              </li>
+              <ul class="submenu_child" id="courses"></ul>
+              <li class="menu-item">
+                <span>3 курс</span>
+                <div class="open_arrow">
+                  <img src="./assets/img/Plugin/Group 1.svg" alt="" />
+                </div>
+              </li>
+              <ul class="submenu_child" id="courses"></ul>
+              <li class="menu-item">
+                <span>4 курс</span>
+                <div class="open_arrow">
+                  <img src="./assets/img/Plugin/Group 1.svg" alt="" />
+                </div>
+              </li>
+              <ul class="submenu_child" id="courses"></ul>
+            </ul>
+            <li class="menu-item">
+              <div class="icon">
+                <img src="./assets/img/Plugin/3 User.svg" alt="" />
+              </div>
+              <span>Экспорт</span>
+            </li>
+            <li class="menu-item">
+              <div class="icon">
+                <img src="./assets/img/Plugin/Edit-Square.svg" alt="" />
+              </div>
+              <span>Posts</span>
+            </li>
+            <li class="menu-item">
+              <div class="icon">
+                <img src="./assets/img/Plugin/Filter.svg" alt="" />
+              </div>
+              <span>tg-bot</span>
+            </li>
+          </ul>
+          <div class="footer">
+            <div class="log_icon">
+              <img src="./assets/img/Plugin/Logout.svg" alt="" />
+            </div>
+            <span>вход</span>
+          </div>
+        </div>
+
+        <div class="main-panel">
+          <div class="table_main">
+            <div class="table_block">
+              <table class="custom_table" id="custom_table">
+                <thead>
+                  <tr>
+                    <th class="day-cell" colspan="2" rowspan="2"></th>
+                    <th colspan="6">Группы</th>
+                  </tr>
+                  <tr></tr>
+                </thead>
+
+                <tbody>
+                  <tr>
+                    <th class="day-cell"></th>
+                    <th>Время</th>
+                  </tr>
+                  <tr>
+                    <td class="day-cell" rowspan="6">
+                      <svg height="150" width="20">
+                        <text
+                          x="10"
+                          y="145"
+                          transform="rotate(-90 10,140)"
+                          style="font-weight: bold"
+                        >
+                          Понедельник
+                        </text>
+                      </svg>
+                    </td>
+                    <td class="date_custom">
+                      <div>8<span>30</span>-10<span>05</span></div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="date_custom">
+                      <div>10<span>15</span>-11<span>15</span></div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="date_custom">
+                      <div>12<span>20</span>-13<span>55</span></div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="date_custom">
+                      <div>14<span>05</span>-15<span>40</span></div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="date_custom">
+                      <div>15<span>50</span>-17<span>25</span></div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="date_custom">
+                      <div>17<span>35</span>-19<span>10</span></div>
+                    </td>
+                  </tr>
+                </tbody>
+
+                <tbody>
+                  <tr>
+                    <td class="day-cell" rowspan="6">
+                      <svg height="150" width="20">
+                        <text
+                          x="10"
+                          y="145"
+                          transform="rotate(-90 10,140)"
+                          style="font-weight: bold"
+                        >
+                          Вторник
+                        </text>
+                      </svg>
+                    </td>
+                    <td class="date_custom">
+                      <div>8<span>30</span>-10<span>05</span></div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="date_custom">
+                      <div>10<span>15</span>-11<span>15</span></div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="date_custom">
+                      <div>12<span>20</span>-13<span>55</span></div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="date_custom">
+                      <div>14<span>05</span>-15<span>40</span></div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="date_custom">
+                      <div>15<span>50</span>-17<span>25</span></div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="date_custom">
+                      <div>17<span>35</span>-19<span>10</span></div>
+                    </td>
+                  </tr>
+                </tbody>
+
+                <tbody>
+                  <tr>
+                    <td class="day-cell" rowspan="6">
+                      <svg height="150" width="20">
+                        <text
+                          x="10"
+                          y="145"
+                          transform="rotate(-90 10,140)"
+                          style="font-weight: bold"
+                        >
+                          Среда
+                        </text>
+                      </svg>
+                    </td>
+                    <td class="date_custom">
+                      <div>8<span>30</span>-10<span>05</span></div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="date_custom">
+                      <div>10<span>15</span>-11<span>15</span></div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="date_custom">
+                      <div>12<span>20</span>-13<span>55</span></div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="date_custom">
+                      <div>14<span>05</span>-15<span>40</span></div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="date_custom">
+                      <div>15<span>50</span>-17<span>25</span></div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="date_custom">
+                      <div>17<span>35</span>-19<span>10</span></div>
+                    </td>
+                  </tr>
+                </tbody>
+
+                <tbody>
+                  <tr>
+                    <td class="day-cell" rowspan="6">
+                      <svg height="150" width="20">
+                        <text
+                          x="10"
+                          y="145"
+                          transform="rotate(-90 10,140)"
+                          style="font-weight: bold"
+                        >
+                          Четверг
+                        </text>
+                      </svg>
+                    </td>
+                    <td class="date_custom">
+                      <div>8<span>30</span>-10<span>05</span></div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="date_custom">
+                      <div>10<span>15</span>-11<span>15</span></div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="date_custom">
+                      <div>12<span>20</span>-13<span>55</span></div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="date_custom">
+                      <div>14<span>05</span>-15<span>40</span></div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="date_custom">
+                      <div>15<span>50</span>-17<span>25</span></div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="date_custom">
+                      <div>17<span>35</span>-19<span>10</span></div>
+                    </td>
+                  </tr>
+                </tbody>
+
+                <tbody>
+                  <tr>
+                    <td class="day-cell" rowspan="6">
+                      <svg height="150" width="20">
+                        <text
+                          x="10"
+                          y="145"
+                          transform="rotate(-90 10,140)"
+                          style="font-weight: bold"
+                        >
+                          Пятница
+                        </text>
+                      </svg>
+                    </td>
+                    <td class="date_custom">
+                      <div>8<span>30</span>-10<span>05</span></div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="date_custom">
+                      <div>10<span>15</span>-11<span>15</span></div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="date_custom">
+                      <div>12<span>20</span>-13<span>55</span></div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="date_custom">
+                      <div>14<span>05</span>-15<span>40</span></div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="date_custom">
+                      <div>15<span>50</span>-17<span>25</span></div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="date_custom">
+                      <div>17<span>35</span>-19<span>10</span></div>
+                    </td>
+                  </tr>
+                </tbody>
+
+                <tbody>
+                  <tr>
+                    <td class="day-cell" rowspan="6">
+                      <svg height="150" width="20">
+                        <text
+                          x="10"
+                          y="145"
+                          transform="rotate(-90 10,140)"
+                          style="font-weight: bold"
+                        >
+                          Суббота
+                        </text>
+                      </svg>
+                    </td>
+                    <td class="date_custom">
+                      <div>8<span>30</span>-10<span>05</span></div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="date_custom">
+                      <div>10<span>15</span>-11<span>15</span></div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="date_custom">
+                      <div>12<span>20</span>-13<span>55</span></div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="date_custom">
+                      <div>14<span>05</span>-15<span>40</span></div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="date_custom">
+                      <div>15<span>50</span>-17<span>25</span></div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="date_custom">
+                      <div>17<span>35</span>-19<span>10</span></div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <div class="table-send-buttons">
+                <button class="menu-item" type="button" id="send">Сохранить</button>
+                <button class="menu-item" type="button" id="reset">Отменить</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"
+      integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+      defer
+    ></script>
+    <script src="./assets/js/table2.js"></script>
+
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <script src="assets/vendors/js/vendor.bundle.base.js"></script>
+    <script src="assets/js/template.js"></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        $('[data-table-btn="first_table"]').click(function () {
+          $("#custom_table").fadeIn();
+        });
+
+        const sidebar = document.querySelector(".sidebar");
+        // Tugmachaga bosilganda .sidebar-ga 'active' class qo'shish yoki olib tashlash
+        const togglerButtons = document.querySelectorAll(".navbar-toggler");
+
+        // Har bir toggler tugmachasi uchun sikl
+        togglerButtons.forEach((toggler) => {
+          toggler.addEventListener("click", function () {
+            // Shu togglerga eng yaqin bo'lgan sidebarni topish
+            const sidebar = document.querySelector(".sidebar");
+            if (sidebar) {
+              sidebar.classList.toggle("active");
+            }
+          });
+        });
+
+        const menuItems = document.querySelectorAll(".menus_list > .menu-item");
+        const submenuItems = document.querySelectorAll(".submenu .menu-item");
+
+        // Asosiy menyu-item bosilganda submenu ochish
+        menuItems.forEach((item) => {
+          item.addEventListener("click", function () {
+            const submenu = this.nextElementSibling;
+            item.classList.toggle("active");
+            if (submenu && submenu.classList.contains("submenu")) {
+              submenu.classList.toggle("active");
+            }
+          });
+        });
+
+        // Submenu ichidagi menu-item bosilganda submenu_child ochish
+        submenuItems.forEach((item) => {
+          item.addEventListener("click", function () {
+            const submenuChild = this.nextElementSibling;
+            item.classList.toggle("active");
+            if (submenuChild && submenuChild.classList.contains("submenu_child")) {
+              submenuChild.classList.toggle("active");
+            }
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

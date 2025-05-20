@@ -1,0 +1,22 @@
+{
+  "name": "telegram-schedule-bot",
+  "version": "1.0.0",
+  "description": "Бот для отображения расписания по курсам и группам",
+  "main": "bot.js",
+  "scripts": {
+    "start": "node bot.js"
+  },
+  "keywords": [
+    "telegram",
+    "bot",
+    "telegraf",
+    "schedule"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "multer": "^1.4.5-lts.2",
+    "telegraf": "4.16.3"
+  }
+}
