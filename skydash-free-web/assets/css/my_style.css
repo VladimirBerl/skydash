@@ -308,3 +308,9 @@ td {
     padding-inline: 0;
   }
 }
+
+td {
+  max-width: 150px;
+  word-wrap: break-word;
+  hyphens: auto;
+}
